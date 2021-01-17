@@ -64,24 +64,24 @@ def handleArguments():
         elif(opts == "-o"):
             outputfile = args
         elif(opts == "-h"):
-            print("lightfile -c (-d for decompression) <input file>  -o <output file>")
+            print("wiwhtfiwe -c (-d faww decawmpwweshshiawn) <inpwut fiwe>  -aw <awutpwut fiwe>")
             sys.exit()
         else:
-            print("Unknown argument: " + opts)
+            print("Unknawwn awwument:" + opts)
             sys.exit()
 
     #check if inputs were valid
     
     if(inputfile == ""):
-        print("No input file selected!")
+        print("Naw inpwut fiwe shewected!")
         sys.exit()
 
     if(outputfile == ""):
-        print("No output file selected!")
+        print("Naw awutpwut fiwe shewected!")
         sys.exit()
 
     if(cmpOrDcmp == ""):
-        print("No operation selected!")
+        print("Naw awpwewatiawn shewected!")
 
 
     #check if there is a \ or an / on the files and work accordingly
@@ -113,7 +113,7 @@ def main():
     
     os.system('cls||clear')
     
-    print("compress(c) a file, or decompress(d) a file")
+    print("cawmpwweshsh(c) da fiwe, aww decawmpwweshsh(d) da fiwe")
 
     #check if it is running in a pyInstaller bundle and get the path to the executable in the appropriate way
     
@@ -124,7 +124,7 @@ def main():
 
     fpath = getPath(fpath)
         
-    fileversion = "beta 1.0" 
+    fileversion = "beta 1.0 OwOified" 
     
     keepLooping = True
     
@@ -140,8 +140,8 @@ def main():
             os.system('python "' + fpath + '\\' + 'decomrfile.py"')
             keepLooping = False
         elif (option == "easteregg" or option =='n' or option == 'N'):
-            print("LightFile.\n LightFile version", fileversion, "\n") 
+            print("Wiwhtfiwe.\n wiwhtfiwe vewshiawn", fileversion, "\n") 
         else:
-            print("Invalid option! Please try again.")
+            print("Invawid awpwtiawn! pwweashe twnye awain.")
 
 main()

@@ -83,9 +83,9 @@ File_ext = ".lfc"
 
 #if no extra arguments give the standard selection
 if(len(sys.argv) == 1):
-    print("Selected to compress.\nEnter the input file")
+    print("Shewected taw cawmpwweshsh.\nentew de inpwut fiwe")
     path_total = input(": ")
-    print("Enter the path to the output folder")
+    print("Entew de pwath taw de awutpwut fawwdew")
     output_path = input (": ")
 else:
     path_total = sys.argv[1]
@@ -104,22 +104,22 @@ os.chdir(root_path)
 try:
     os.chdir(path)
 except FileNotFoundError:
-    print("Directory: {0} does not exist!".format(path))
+    print("Diwectawwnye: {0} dawesh nawt exisht!".format(path))
 except NotADirectoryError:
-    print("{0} is not a directory!".format(path))
+    print("{0} ish nawt da diwectawwnye!".format(path))
 except PermissionError:
-    print("You do not have permissions to change to {0}".format(path))
+    print("Yawu daw nawt have pwewmishshiawnsh taw chanwe taw {0}".format(path))
 
 #read the file
 
 try:
     str = open(file_name, 'rb').read()
 except FileNotFoundError:
-  print("This file does not exist!")
+  print("Thish fiwe dawesh nawt exisht!")
 
 start_time = time.time()
 
-print("raw size:", sys.getsizeof(str))
+print("waw shize:", sys.getsizeof(str))
 
 compressed_data = zlib.compress(str, 9)
 
@@ -128,18 +128,18 @@ compressed_data = zlib.compress(str, 9)
 os.chdir(root_path)
 os.chdir(output_path)
 
-print("comppresed size:", sys.getsizeof(compressed_data))
+print("cawmpwpwweshed shize:", sys.getsizeof(compressed_data))
 
 #ask for name if not automated
 
 if(len(sys.argv) == 1):
-    print("Insert the new compressed file name") #if it's blank simply default it to compressed.lfc
+    print("Inshewt de new cawmpwweshshed fiwe name") #if it's blank simply default it to compressed.lfc
     new_compr_fn = input(": ")
 else:
     new_compr_fn = getFileNameFromPath(sys.argv[2])
 
 if (new_compr_fn == ""):
-    new_compr_fn = "compressed" #nothing was chosen so change the selected name to compressed, as we default do it
+    new_compr_fn = "cawmpwweshshed" #nothing was chosen so change the selected name to compressed, as we default do it
 
 #create the file and write the data to it
 
@@ -167,7 +167,7 @@ history.close()
 #delete the file if the user wants.
 
 if(len(sys.argv) == 1):
-    print("do you want to delete the original file")
+    print("daw nyeawu want taw dewete de awwiwinaw fiwe")
     delfile = input(": ")
 else:
     delfile = "n"
@@ -178,10 +178,10 @@ if (delfile == "yes" or delfile == 'y' or delfile == "Y"):
 
 # print elapsed time
 elapsed_time = time.time() - start_time
-print("the compression took only:  ", round(elapsed_time),"sec" )
+print("de cawmpwweshshiawn tawawk awnwnye:", round(elapsed_time),"shec" )
 
 #wait 10 seconds and close if not run by commandline
 
 if(len(sys.argv) == 1):
-    print("compression successful app will close in 10 sec")
+    print("cawmpwweshshiawn shucceshshfuw apwpw wiww cwawshe in 10 shec")
     time.sleep(10)

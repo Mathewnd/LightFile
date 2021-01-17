@@ -77,9 +77,9 @@ def getFileNameFromPath(s):
 
 root_path = '/'
 if(len(sys.argv) == 1):
-    print("Selected to decompress.\nEnter the input file")
+    print("Shewected taw decawmpwweshsh.\nentew de inpwut fiwe")
     path_total = input(": ")
-    print("Enter the path to the output folder")
+    print("Entew de pwath taw de awutpwut fawwdew")
     output_path = input (": ")
 else:
     path_total = sys.argv[1]
@@ -95,26 +95,26 @@ os.chdir(root_path)
 try:
     os.chdir(path)
 except FileNotFoundError:
-    print("Directory: {0} does not exist!".format(path))
+    print("Diwectawwnye: {0} dawesh nawt exisht!".format(path))
 except NotADirectoryError:
-    print("{0} is not a directory!".format(path))
+    print("{0} ish nawt da diwectawwnye!".format(path))
 except PermissionError:
-    print("You do not have permissions to change to {0}".format(path))
+    print("Yawu daw nawt have pwewmishshiawnsh taw chanwe taw {0}".format(path))
 
 #open the file
 time_start = time.time()
 try:
     str = open(file_name, 'rb').read()
 except FileNotFoundError:
-  print("This file does not exist!")
+  print("Thish fiwe dawesh nawt exisht!")
 
 
 #decompress
-print("compressed size:", sys.getsizeof(str))
+print("cawmpwweshshed shize:", sys.getsizeof(str))
 
 decompressed_data = zlib.decompress(str)
 
-print("decomppresed size:", sys.getsizeof(decompressed_data))
+print("decawmpwpwweshed shize:", sys.getsizeof(decompressed_data))
 
 #change to output directory
 
@@ -124,7 +124,7 @@ os.chdir(output_path)
 #get new filename
 
 if(len(sys.argv) == 1):
-    print("Insert the new decompressed file name")
+    print("Inshewt de new decawmpwweshshed fiwe name")
     file_newname = input(": ")
 else:
     file_newname = getFileNameFromPath(sys.argv[2])
@@ -163,7 +163,7 @@ savedecomp.close()
 #check if the user wants to delete the compressed file
 
 if(len(sys.argv) == 1):
-    print("do you want to delete the compressed file")
+    print("daw nyeawu want taw dewete de cawmpwweshshed fiwe")
 
     delfile = input(": ")
 else:
@@ -176,10 +176,10 @@ if (delfile == "yes" or delfile == 'y' or delfile == "Y"):
 #get the elapsed time and print it
 
 time_elapsed = time.time() - time_start
-print("decompression only took:", round(time_elapsed), "sec")
+print("decawmpwweshshiawn awnwnye tawawk:", round(time_elapsed), "shec")
 
 #wait 10 seconds and close
 
 if(len(sys.argv) == 1):
-    print("decompression successful! app wil close in 10 sec")
+    print("decawmpwweshshiawn shucceshshfuw! apwpw wiw cwawshe in 10 shec")
     time.sleep(10)
